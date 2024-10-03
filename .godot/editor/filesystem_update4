@@ -1,21 +1,3 @@
 res://default_env.tres
 res://Scenes/Mundo.tscn
-res://Singletons/StaticData.gd
-res://Singletons/DamageNumbers.gd
-res://Scenes/MultiplayerPruebas/Scripts prueba/PlayerMultiplayer.gd
-res://Scripts/EstadisticasJugador.gd
-res://Scripts/GUIPausa.gd
-res://Scripts/HUD.gd
-res://Scripts/Login.gd
-res://Scripts/MenuInicio.gd
-res://Scripts/MenuMejorasPerma.gd
-res://Scripts/Mundo.gd
-res://Scripts/Player.gd
-res://Scripts/Registro.gd
-res://Scripts/GUIlvlup.gd
-res://Scripts/Saves/SaveScript.gd
-res://Scenes/MultiplayerPruebas/Scripts prueba/server.gd
-res://Scripts/EstadisticasView.gd
-res://Scripts/Enemigo.gd
-res://Scripts/MapGen.gd
 res://Scenes/Mundo/MapGen.tscn
