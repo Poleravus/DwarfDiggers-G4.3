@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Armas/Pico/hitbox pico.png" type="Texture2D" id=1]
+[ext_resource path="res://Sprites/Armas/Pico/small_slash_3.png" type="Texture2D" id=2]
+[ext_resource path="res://Scripts/Slash_pico.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "attack"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.7, 1.4, 2.1 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[node name="Slash_pico" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2( 39, 0 )
+rotation = 1.5708
+scale = Vector2( 0.08, 0.08 )
+texture = ExtResource( 1 )
+offset = Vector2( 3.05176e-05, 20 )
+
+[node name="Damage_area" type="Area2D" parent="Sprite2D"]
+visible = false
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/Damage_area"]
+position = Vector2( 0.00012207, 20.4457 )
+polygon = PackedVector2Array( 129, -462.3, 129, -461.2, 216, -446.2, 216, -445, 315, -417, 315, -415.9, 402, -380.9, 402, -379.7, 492, -331.7, 492, -330.6, 569, -278.6, 569, -277.4, 641, -217.4, 641, -216.3, 705, -151.3, 705, -149.2, 743, -105.2, 743, -103.2, 773, -64.2, 773, -62.1, 818, 7.89999, 818, 10, 859, 90, 859, 92.9, 889, 167.1, 889, 171.2, 902, 209.2, 902, 213.5, 917, 269.2, 917, 275.5, 933, 371.3, 933, 467.5, -933, 467.5, -933, 380.5, -931.8, 380.5, -919.8, 287.5, -918.6, 287.5, -900.6, 207.5, -899.4, 207.5, -872.5, 124.5, -871.3, 124.5, -847.3, 66.5, -846.3, 66.5, -828.3, 28.5, -827.1, 28.5, -794.2, -30.5, -793.1, -30.5, -741.1, -106.5, -739.9, -106.5, -681.9, -175.5, -680.8, -175.5, -616.8, -238.5, -614.7, -238.5, -550.7, -291.5, -548.5, -291.5, -489.6, -332.5, -487.5, -332.5, -399.5, -381.5, -396.3, -381.5, -323.4, -413.5, -320.3, -413.5, -241.3, -439.5, -237.4, -439.5, -147.2, -459.5, -140.3, -459.5, -102.2, -465.5, -91.2, -465.5, -65.5, -467.5, 65.9, -467.5 )
+
+[node name="Animacion" type="Sprite2D" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 44, 3 )
+rotation = -2.01424
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animacion"]
+playback_speed = 12.55
+anims/RESET = SubResource( 1 )
+anims/attack = SubResource( 2 )
+
+[connection signal="animation_finished" from="Animacion/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

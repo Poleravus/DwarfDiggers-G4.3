@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Joystick.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/HUD/CircleJoystick.png" type="Texture2D" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 137.131
+
+[node name="Joystick" type="Area2D"]
+scale = Vector2( 0.4, 0.4 )
+script = ExtResource( 1 )
+
+[node name="Bigcircle" type="Sprite2D" parent="."]
+self_modulate = Color( 1, 1, 1, 0.184314 )
+texture = ExtResource( 2 )
+
+[node name="Smallcircle" type="Sprite2D" parent="Bigcircle"]
+self_modulate = Color( 1, 1, 1, 0.188235 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

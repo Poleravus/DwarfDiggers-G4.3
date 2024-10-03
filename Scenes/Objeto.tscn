@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sounds/ExpFX.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/Objeto.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Assets/light.png" type="Texture2D" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 7.07107
+
+[node name="Objeto" type="Node2D" groups=["Objects"]]
+light_mask = 4
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="." groups=["Objects"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2( 1, 1 )
+light_mask = 4
+scale = Vector2( 0.025, 0.025 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="EXPfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -15.0
+pitch_scale = 1.4
+bus = "FX"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 4
+texture = ExtResource( 3 )
+texture_scale = 0.1
+color = Color( 0.858824, 0.721569, 0.501961, 1 )
+energy = 0.9
+range_item_cull_mask = 4
+shadow_item_cull_mask = 4

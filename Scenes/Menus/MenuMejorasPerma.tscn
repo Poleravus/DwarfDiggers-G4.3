@@ -1,0 +1,366 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Sprites/Menus/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Sprites/Menus/7-3.png" type="Texture2D" id=3]
+[ext_resource path="res://Sprites/Menus/cave.jpg" type="Texture2D" id=4]
+[ext_resource path="res://Sprites/Menus/4-1.png" type="Texture2D" id=6]
+[ext_resource path="res://Sprites/Menus/4-2.png" type="Texture2D" id=7]
+[ext_resource path="res://Sprites/Menus/2-3.png" type="Texture2D" id=8]
+[ext_resource path="res://Sprites/HUD/1-4.png" type="Texture2D" id=9]
+[ext_resource path="res://Sprites/Armas/Pico/picoprueba.png" type="Texture2D" id=10]
+[ext_resource path="res://Sprites/Objetos/Experiencia.png" type="Texture2D" id=11]
+[ext_resource path="res://Sprites/Menus/Boots.webp" type="Texture2D" id=12]
+[ext_resource path="res://Sprites/Menus/1787_Brasher_Doubloon_(obverse)_transparent_background.png" type="Texture2D" id=13]
+[ext_resource path="res://Sprites/Menus/4-3.png" type="Texture2D" id=14]
+[ext_resource path="res://Sprites/Menus/7-2.png" type="Texture2D" id=15]
+[ext_resource path="res://Sprites/Menus/7-1.png" type="Texture2D" id=16]
+[ext_resource path="res://Scripts/MenuMejorasPerma.gd" type="Script" id=17]
+[ext_resource path="res://Sprites/Menus/1.png" type="Texture2D" id=18]
+
+
+[node name="MenuMejorasPerma" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 17 )
+
+[node name="Cave" type="Sprite2D" parent="."]
+position = Vector2( -1509, -364 )
+scale = Vector2( 1, 0.8 )
+texture = ExtResource( 4 )
+offset = Vector2( 2064.25, 881.563 )
+
+[node name="Fondos" type="Sprite2D" parent="."]
+position = Vector2( 325.4, 139 )
+scale = Vector2( 0.219792, 0.217857 )
+texture = ExtResource( 18 )
+
+[node name="Contenedor" type="Sprite2D" parent="."]
+position = Vector2( 527, 317 )
+texture = ExtResource( 8 )
+
+[node name="Titulo" type="Label" parent="Contenedor"]
+offset_left = -114.0
+offset_top = -253.0
+offset_right = 114.0
+offset_bottom = -177.0
+text = "MEJORAS PERMANENTES"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="monedas" type="Label" parent="Contenedor/Titulo"]
+offset_left = 16.0
+offset_top = 58.0
+offset_right = 112.0
+offset_bottom = 84.0
+text = "MONEDAS:"
+
+[node name="1787BrasherDoubloon(obverse)TransparentBackground" type="Sprite2D" parent="Contenedor/Titulo/monedas"]
+position = Vector2( 102, 15 )
+scale = Vector2( 0.008, 0.008 )
+texture = ExtResource( 13 )
+
+[node name="value" type="Label" parent="Contenedor/Titulo/monedas"]
+offset_left = 112.0
+offset_right = 283.0
+offset_bottom = 55.0
+text = "00000000000"
+autowrap = true
+
+[node name="UpgradeVida" type="TextureButton" parent="Contenedor"]
+offset_left = -96.0
+offset_top = -121.0
+offset_right = -12.0
+offset_bottom = -81.0
+texture_normal = ExtResource( 6 )
+texture_disabled = ExtResource( 14 )
+texture_focused = ExtResource( 7 )
+
+[node name="nivel" type="Label" parent="Contenedor/UpgradeVida"]
+offset_left = 101.0
+offset_top = 7.0
+offset_right = 155.0
+offset_bottom = 26.0
+text = "Nivel:"
+
+[node name="value" type="Label" parent="Contenedor/UpgradeVida/nivel"]
+offset_left = 72.0
+offset_top = -1.0
+offset_right = 112.0
+offset_bottom = 25.0
+text = "0"
+
+[node name="Label2" type="Label" parent="Contenedor/UpgradeVida"]
+offset_top = 3.0
+offset_right = 85.0
+offset_bottom = 33.0
+text = "LVL UP"
+align = 1
+valign = 1
+
+[node name="Vidamax" type="Label" parent="Contenedor/UpgradeVida"]
+offset_left = 93.0
+offset_top = -44.0
+offset_right = 189.0
+offset_bottom = -18.0
+text = "VIDA MAX"
+align = 1
+valign = 1
+
+[node name="1-4" type="Sprite2D" parent="Contenedor/UpgradeVida/Vidamax"]
+position = Vector2( -60, 20 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
+[node name="Precio" type="Label" parent="Contenedor/UpgradeVida/Vidamax"]
+offset_left = -34.0
+offset_top = 21.0
+offset_right = 38.0
+offset_bottom = 47.0
+text = "Costo:"
+
+[node name="value" type="Label" parent="Contenedor/UpgradeVida/Vidamax/Precio"]
+offset_left = 90.0
+offset_right = 162.0
+offset_bottom = 26.0
+text = "000000"
+
+[node name="1787BrasherDoubloon(obverse)TransparentBackground" type="Sprite2D" parent="Contenedor/UpgradeVida/Vidamax/Precio"]
+position = Vector2( 79, 15 )
+scale = Vector2( 0.008, 0.008 )
+texture = ExtResource( 13 )
+
+[node name="Upgradedamage" type="TextureButton" parent="Contenedor"]
+offset_left = -96.0
+offset_top = -35.0
+offset_right = -12.0
+offset_bottom = 5.0
+texture_normal = ExtResource( 6 )
+texture_disabled = ExtResource( 14 )
+texture_focused = ExtResource( 7 )
+
+[node name="nivel" type="Label" parent="Contenedor/Upgradedamage"]
+offset_left = 101.0
+offset_top = 7.0
+offset_right = 155.0
+offset_bottom = 26.0
+text = "Nivel:"
+
+[node name="value" type="Label" parent="Contenedor/Upgradedamage/nivel"]
+offset_left = 72.0
+offset_right = 112.0
+offset_bottom = 26.0
+text = "0"
+
+[node name="Label2" type="Label" parent="Contenedor/Upgradedamage"]
+offset_top = 3.0
+offset_right = 85.0
+offset_bottom = 33.0
+text = "LVL UP"
+align = 1
+valign = 1
+
+[node name="damage" type="Label" parent="Contenedor/Upgradedamage"]
+offset_left = 100.0
+offset_top = -41.0
+offset_right = 172.0
+offset_bottom = -22.0
+text = "DAÑO"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="1-4" type="Sprite2D" parent="Contenedor/Upgradedamage/damage"]
+position = Vector2( -60, 20 )
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 10 )
+
+[node name="Precio" type="Label" parent="Contenedor/Upgradedamage/damage"]
+offset_left = -39.0
+offset_top = 20.0
+offset_right = 33.0
+offset_bottom = 46.0
+text = "Costo:"
+
+[node name="value" type="Label" parent="Contenedor/Upgradedamage/damage/Precio"]
+offset_left = 92.0
+offset_right = 164.0
+offset_bottom = 26.0
+text = "000000"
+
+[node name="1787BrasherDoubloon(obverse)TransparentBackground" type="Sprite2D" parent="Contenedor/Upgradedamage/damage/Precio"]
+position = Vector2( 80, 15 )
+scale = Vector2( 0.008, 0.008 )
+texture = ExtResource( 13 )
+
+[node name="Upgradevelocidad" type="TextureButton" parent="Contenedor"]
+offset_left = -96.0
+offset_top = 49.0
+offset_right = -12.0
+offset_bottom = 89.0
+texture_normal = ExtResource( 6 )
+texture_disabled = ExtResource( 14 )
+texture_focused = ExtResource( 7 )
+
+[node name="nivel" type="Label" parent="Contenedor/Upgradevelocidad"]
+offset_left = 101.0
+offset_top = 7.0
+offset_right = 155.0
+offset_bottom = 26.0
+text = "Nivel:"
+
+[node name="value" type="Label" parent="Contenedor/Upgradevelocidad/nivel"]
+offset_left = 74.0
+offset_right = 114.0
+offset_bottom = 26.0
+text = "0"
+
+[node name="Label2" type="Label" parent="Contenedor/Upgradevelocidad"]
+offset_top = 3.0
+offset_right = 85.0
+offset_bottom = 33.0
+text = "LVL UP"
+align = 1
+valign = 1
+
+[node name="Velocidad" type="Label" parent="Contenedor/Upgradevelocidad"]
+offset_left = 100.0
+offset_top = -41.0
+offset_right = 172.0
+offset_bottom = -22.0
+text = "VELOCIDAD"
+align = 1
+valign = 1
+
+[node name="1-4" type="Sprite2D" parent="Contenedor/Upgradevelocidad/Velocidad"]
+position = Vector2( -60, 20 )
+scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 12 )
+
+[node name="Precio" type="Label" parent="Contenedor/Upgradevelocidad/Velocidad"]
+offset_left = -33.0
+offset_top = 22.0
+offset_right = 39.0
+offset_bottom = 48.0
+text = "Costo:"
+
+[node name="value" type="Label" parent="Contenedor/Upgradevelocidad/Velocidad/Precio"]
+offset_left = 89.0
+offset_right = 161.0
+offset_bottom = 26.0
+text = "000000"
+
+[node name="1787BrasherDoubloon(obverse)TransparentBackground" type="Sprite2D" parent="Contenedor/Upgradevelocidad/Velocidad/Precio"]
+position = Vector2( 77, 14 )
+scale = Vector2( 0.008, 0.008 )
+texture = ExtResource( 13 )
+
+[node name="Upgraderange" type="TextureButton" parent="Contenedor"]
+offset_left = -96.0
+offset_top = 132.0
+offset_right = -12.0
+offset_bottom = 171.0
+texture_normal = ExtResource( 6 )
+texture_disabled = ExtResource( 14 )
+texture_focused = ExtResource( 7 )
+
+[node name="nivel" type="Label" parent="Contenedor/Upgraderange"]
+offset_left = 101.0
+offset_top = 7.0
+offset_right = 155.0
+offset_bottom = 26.0
+text = "Nivel:"
+
+[node name="value" type="Label" parent="Contenedor/Upgraderange/nivel"]
+offset_left = 72.0
+offset_right = 112.0
+offset_bottom = 26.0
+text = "0"
+
+[node name="Label2" type="Label" parent="Contenedor/Upgraderange"]
+offset_top = 3.0
+offset_right = 84.0
+offset_bottom = 29.0
+text = "LVL UP"
+align = 1
+valign = 1
+
+[node name="Velocidad" type="Label" parent="Contenedor/Upgraderange"]
+offset_left = 84.0
+offset_top = -42.0
+offset_right = 192.0
+offset_bottom = -23.0
+text = "RANGO"
+align = 1
+valign = 1
+
+[node name="1-4" type="Sprite2D" parent="Contenedor/Upgraderange/Velocidad"]
+position = Vector2( -41, 20 )
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 11 )
+
+[node name="Precio" type="Label" parent="Contenedor/Upgraderange/Velocidad"]
+offset_left = -18.0
+offset_top = 24.0
+offset_right = 54.0
+offset_bottom = 50.0
+text = "Costo:"
+
+[node name="value" type="Label" parent="Contenedor/Upgraderange/Velocidad/Precio"]
+offset_left = 92.0
+offset_right = 164.0
+offset_bottom = 26.0
+text = "000000"
+
+[node name="1787BrasherDoubloon(obverse)TransparentBackground" type="Sprite2D" parent="Contenedor/Upgraderange/Velocidad/Precio"]
+position = Vector2( 79, 14 )
+scale = Vector2( 0.008, 0.008 )
+texture = ExtResource( 13 )
+
+[node name="btnVolver" type="TextureButton" parent="Contenedor"]
+offset_left = -90.0
+offset_top = 184.0
+offset_right = 90.0
+offset_bottom = 224.0
+texture_normal = ExtResource( 16 )
+texture_disabled = ExtResource( 3 )
+texture_focused = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="Contenedor/btnVolver"]
+offset_right = 179.0
+offset_bottom = 35.0
+text = "MENU"
+align = 1
+valign = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 524, 307.5 )
+zoom = Vector2( 0.9, 0.9 )
+
+[node name="FondosLBL" type="Label" parent="."]
+offset_left = 239.0
+offset_top = 80.0
+offset_right = 421.0
+offset_bottom = 190.0
+text = "¡FONDOS INSUFICIENTES!"
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="focus_entered" from="Contenedor/UpgradeVida" to="." method="_on_UpgradeVida_focus_entered"]
+[connection signal="mouse_entered" from="Contenedor/UpgradeVida" to="." method="_on_UpgradeVida_mouse_entered"]
+[connection signal="pressed" from="Contenedor/UpgradeVida" to="." method="_on_UpgradeVida_pressed"]
+[connection signal="focus_entered" from="Contenedor/Upgradedamage" to="." method="_on_Upgradedamage_focus_entered"]
+[connection signal="mouse_entered" from="Contenedor/Upgradedamage" to="." method="_on_Upgradedamage_mouse_entered"]
+[connection signal="pressed" from="Contenedor/Upgradedamage" to="." method="_on_Upgradedamage_pressed"]
+[connection signal="focus_entered" from="Contenedor/Upgradevelocidad" to="." method="_on_Upgradevelocidad_focus_entered"]
+[connection signal="mouse_entered" from="Contenedor/Upgradevelocidad" to="." method="_on_Upgradevelocidad_mouse_entered"]
+[connection signal="pressed" from="Contenedor/Upgradevelocidad" to="." method="_on_Upgradevelocidad_pressed"]
+[connection signal="focus_entered" from="Contenedor/Upgraderange" to="." method="_on_Upgraderange_focus_entered"]
+[connection signal="mouse_entered" from="Contenedor/Upgraderange" to="." method="_on_Upgraderange_mouse_entered"]
+[connection signal="pressed" from="Contenedor/Upgraderange" to="." method="_on_Upgraderange_pressed"]
+[connection signal="focus_entered" from="Contenedor/btnVolver" to="." method="_on_btnVolver_focus_entered"]
+[connection signal="mouse_entered" from="Contenedor/btnVolver" to="." method="_on_btnVolver_mouse_entered"]
+[connection signal="pressed" from="Contenedor/btnVolver" to="." method="_on_btnVolver_pressed"]

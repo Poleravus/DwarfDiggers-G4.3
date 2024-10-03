@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sounds/MachineGun/MachineGunFX2.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Sprites/Armas/Rango_circulo.png" type="Texture2D" id=2]
+[ext_resource path="res://Sounds/MachineGun/MachineGunReloadFX.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/Ametralladora.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 63.1269
+
+[node name="Ametralladora" type="Node2D"]
+scale = Vector2( 3.31261, 3.2864 )
+script = ExtResource( 4 )
+
+[node name="Pivot" type="Node2D" parent="."]
+position = Vector2( 1.77636e-15, -1.21714 )
+scale = Vector2( 1.49933, 1.77866 )
+
+[node name="Rango" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rango"]
+shape = SubResource( 3 )
+
+[node name="Sprite2D" type="Sprite2D" parent="Rango"]
+scale = Vector2( 0.123047, 0.12207 )
+texture = ExtResource( 2 )
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array( -0.603754, -0.304284 )
+width = 1.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0, 2.38419e-07 )
+enabled = true
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Apuntar" type="Timer" parent="."]
+
+[node name="ReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MachineGunReloadFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.0
+bus = "FX"
+
+[node name="MachineGunShootFX1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -20.0
+bus = "FX"
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]

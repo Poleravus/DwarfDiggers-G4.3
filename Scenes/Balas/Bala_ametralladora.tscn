@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Armas/Ametralladora/All_Fire_Bullet_Pixel_16x16_00.png" type="Texture2D" id=1]
+[ext_resource path="res://Scripts/Bala_ametralladora.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.37545
+
+[node name="Bala_ametralladora" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource( 1 )
+hframes = 29
+vframes = 23
+frame = 350
+
+[node name="Damage_area" type="Area2D" parent="Sprite2D"]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Damage_area"]
+position = Vector2( 0.875, -0.375 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Sprite2D/Damage_area" to="." method="_on_Damage_area_body_entered"]

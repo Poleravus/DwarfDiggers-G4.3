@@ -1,0 +1,17 @@
+[remap]
+
+importer="aseprite_wizard.plugin"
+type="SpriteFrames"
+path="res://.import/crystal_mauler_free_v1.0.aseprite-08182f986a865c952500510b8f7e1686.res"
+
+[deps]
+
+source_file="res://Sprites/crystal_mauler_free_v1.0.aseprite"
+dest_files=[ "res://.import/crystal_mauler_free_v1.0.aseprite-08182f986a865c952500510b8f7e1686.res" ]
+
+[params]
+
+split_layers=false
+exclude_layers_pattern=""
+only_visible_layers=false
+sheet_type="Packed"

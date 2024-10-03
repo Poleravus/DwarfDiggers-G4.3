@@ -1,0 +1,211 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Sprites/Objetos/Experiencia.png" type="Texture2D" id=3]
+[ext_resource path="res://Fonts/letraspeque;as.tres" type="FontFile" id=4]
+[ext_resource path="res://Sprites/Armas/Pico/picoprueba.png" type="Texture2D" id=5]
+[ext_resource path="res://Sprites/Assets/black background.jpeg" type="Texture2D" id=7]
+[ext_resource path="res://Scripts/GUIlvlup.gd" type="Script" id=8]
+[ext_resource path="res://Sprites/Menus/new_theme.tres" type="Theme" id=9]
+[ext_resource path="res://Sprites/Menus/2-2.png" type="Texture2D" id=10]
+[ext_resource path="res://Sprites/Menus/2-3.png" type="Texture2D" id=11]
+
+[node name="GUIlvlup" type="Control"]
+process_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -506.0
+offset_top = -318.0
+offset_right = -506.0
+offset_bottom = -318.0
+scale = Vector2( 1.8, 1.8 )
+pivot_offset = Vector2( 505.556, 314.444 )
+theme = ExtResource( 9 )
+script = ExtResource( 8 )
+
+[node name="lvlupchains" type="Sprite2D" parent="."]
+position = Vector2( 503.025, 222.531 )
+
+[node name="opcion1" type="TextureButton" parent="lvlupchains"]
+self_modulate = Color( 0, 0, 1, 1 )
+offset_left = -178.333
+offset_top = -10.0003
+offset_right = 49.6666
+offset_bottom = 468.0
+scale = Vector2( 0.45, 0.45 )
+focus_neighbor_right = NodePath("../opcion2")
+texture_normal = ExtResource( 10 )
+texture_focused = ExtResource( 11 )
+
+[node name="Escalar" type="Node2D" parent="lvlupchains/opcion1"]
+position = Vector2( 62.5, 50 )
+scale = Vector2( 2.22, 2.22 )
+
+[node name="imagen1" type="Sprite2D" parent="lvlupchains/opcion1/Escalar"]
+position = Vector2( 23.781, 34.2181 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="opcion1label" type="Label" parent="lvlupchains/opcion1/Escalar"]
+anchor_right = 0.382
+offset_left = -21.4798
+offset_top = -18.6297
+offset_right = 67.5202
+offset_bottom = 10.3703
+theme_override_fonts/font = ExtResource( 4 )
+text = "Opción 1
+"
+align = 1
+autowrap = true
+
+[node name="descripcion1" type="Label" parent="lvlupchains/opcion1/Escalar"]
+offset_left = -24.0
+offset_top = 81.0
+offset_right = 70.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource( 4 )
+text = "te mueves mas rapido
+"
+align = 1
+autowrap = true
+
+[node name="datos1" type="Label" parent="lvlupchains/opcion1/Escalar"]
+offset_left = -23.0
+offset_top = 143.0
+offset_right = 67.0
+offset_bottom = 189.0
+theme_override_fonts/font = ExtResource( 4 )
+text = "100% -> 100%"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="opcion2" type="TextureButton" parent="lvlupchains"]
+self_modulate = Color( 0, 0, 1, 1 )
+offset_left = -45.5556
+offset_top = -10.5559
+offset_right = 182.444
+offset_bottom = 467.444
+scale = Vector2( 0.45, 0.45 )
+focus_neighbor_left = NodePath("../opcion1")
+focus_neighbor_right = NodePath("../opcion3")
+texture_normal = ExtResource( 10 )
+texture_focused = ExtResource( 11 )
+
+[node name="Escalar" type="Node2D" parent="lvlupchains/opcion2"]
+scale = Vector2( 2.22, 2.22 )
+
+[node name="descripcion2" type="Label" parent="lvlupchains/opcion2/Escalar"]
+offset_left = 6.0
+offset_top = 103.0
+offset_right = 97.0
+offset_bottom = 189.0
+theme_override_fonts/font = ExtResource( 4 )
+text = "agarras exp de mas lejos
+"
+align = 1
+autowrap = true
+
+[node name="opcion2label" type="Label" parent="lvlupchains/opcion2/Escalar"]
+anchor_right = 0.382
+offset_left = 7.78556
+offset_top = 4.44889
+offset_right = 93.7856
+offset_bottom = 49.4489
+theme_override_fonts/font = ExtResource( 4 )
+text = "Opción 2
+
+"
+align = 1
+autowrap = true
+
+[node name="imagen2" type="Sprite2D" parent="lvlupchains/opcion2/Escalar"]
+position = Vector2( 51.4475, 59.6712 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 800, 800 )
+region_filter_clip_enabled = true
+
+[node name="datos2" type="Label" parent="lvlupchains/opcion2/Escalar"]
+offset_left = 3.0
+offset_top = 167.0
+offset_right = 99.0
+offset_bottom = 211.0
+theme_override_fonts/font = ExtResource( 4 )
+text = "100% -> 100%"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="opcion3" type="TextureButton" parent="lvlupchains"]
+self_modulate = Color( 0, 0, 1, 1 )
+offset_left = 78.8888
+offset_top = -10.0003
+offset_right = 306.889
+offset_bottom = 468.0
+scale = Vector2( 0.45, 0.45 )
+focus_neighbor_left = NodePath("../opcion2")
+texture_normal = ExtResource( 10 )
+texture_focused = ExtResource( 11 )
+
+[node name="Escalar" type="Node2D" parent="lvlupchains/opcion3"]
+position = Vector2( 1.52588e-05, 3.05176e-05 )
+scale = Vector2( 2.22, 2.22 )
+
+[node name="opcion3label" type="Label" parent="lvlupchains/opcion3/Escalar"]
+anchor_right = 0.382
+offset_left = 2.22443
+offset_top = 4.44888
+offset_right = 100.224
+offset_bottom = 49.4489
+theme_override_fonts/font = ExtResource( 4 )
+text = "Opción 3
+
+"
+align = 1
+
+[node name="imagen3" type="Sprite2D" parent="lvlupchains/opcion3/Escalar"]
+position = Vector2( 51.7183, 55.0552 )
+scale = Vector2( 0.0974394, 0.108507 )
+texture = ExtResource( 5 )
+
+[node name="descripcion3" type="Label" parent="lvlupchains/opcion3/Escalar"]
+offset_left = 4.0
+offset_top = 105.0
+offset_right = 99.0
+offset_bottom = 185.0
+theme_override_fonts/font = ExtResource( 4 )
+text = "picas mas fuerte"
+align = 1
+autowrap = true
+
+[node name="datos3" type="Label" parent="lvlupchains/opcion3/Escalar"]
+offset_left = 4.0
+offset_top = 166.0
+offset_right = 100.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource( 4 )
+text = "100% -> 100%"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="lvlupmensaje" type="Label" parent="lvlupchains"]
+offset_left = -43.642
+offset_top = -38.5802
+offset_right = 72.358
+offset_bottom = 10.4198
+text = "LEVEL UP!"
+autowrap = true
+
+[node name="Sprite2D" type="Sprite2D" parent="lvlupchains"]
+self_modulate = Color( 0.2, 0.227451, 0.309804, 0.486275 )
+show_behind_parent = true
+position = Vector2( 3.33327, 94.4441 )
+scale = Vector2( 2.63333, 1.72099 )
+texture = ExtResource( 7 )
+
+[connection signal="mouse_entered" from="lvlupchains/opcion1" to="." method="_on_opcion1_mouse_entered"]
+[connection signal="pressed" from="lvlupchains/opcion1" to="." method="_on_opcion1_pressed"]
+[connection signal="mouse_entered" from="lvlupchains/opcion2" to="." method="_on_opcion2_mouse_entered"]
+[connection signal="pressed" from="lvlupchains/opcion2" to="." method="_on_opcion2_pressed"]
+[connection signal="mouse_entered" from="lvlupchains/opcion3" to="." method="_on_opcion3_mouse_entered"]
+[connection signal="pressed" from="lvlupchains/opcion3" to="." method="_on_opcion3_pressed"]

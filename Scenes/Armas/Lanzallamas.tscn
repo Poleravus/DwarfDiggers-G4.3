@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Lanzallamas.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/Lanzallamas/FlameThrowerReloadFX.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/Lanzallamas/LanzallamasFXShoot.mp3" type="AudioStream" id=3]
+
+[node name="Lanzallamas" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Pivot" type="Node2D" parent="."]
+position = Vector2( 1.77636e-15, -1.21714 )
+scale = Vector2( 1.49933, 1.77866 )
+
+[node name="ReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="LanzallamasShootFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+bus = "FX"
+
+[node name="LanzallamasReloadFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = 10.0
+bus = "FX"
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]

@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/GUIPausa.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Menus/7-2.png" type="Texture2D" id=2]
+[ext_resource path="res://Sprites/Menus/new_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Sprites/Menus/1-1.png" type="Texture2D" id=4]
+[ext_resource path="res://Sprites/Menus/1-2.png" type="Texture2D" id=5]
+[ext_resource path="res://Sprites/HUD/22f5240ce52a5c4.png" type="Texture2D" id=6]
+[ext_resource path="res://Sprites/Menus/7-1.png" type="Texture2D" id=7]
+[ext_resource path="res://Sprites/Menus/7-3.png" type="Texture2D" id=8]
+[ext_resource path="res://Sprites/Menus/fondo.png" type="Texture2D" id=9]
+[ext_resource path="res://Sprites/Assets/black background.jpeg" type="Texture2D" id=10]
+
+[node name="GUI opciones" type="Control"]
+process_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+scale = Vector2( 1.6, 1.6 )
+theme = ExtResource( 3 )
+script = ExtResource( 1 )
+
+[node name="Fondo" type="Sprite2D" parent="."]
+texture = ExtResource( 9 )
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo"]
+self_modulate = Color( 0.2, 0.227451, 0.309804, 0.486275 )
+show_behind_parent = true
+position = Vector2( 2.14577e-06, -1.4706 )
+scale = Vector2( 3.26797, 2.12549 )
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="Fondo"]
+offset_left = -132.0
+offset_top = -93.0
+offset_right = 129.0
+offset_bottom = 102.0
+text = "PAUSA"
+align = 1
+
+[node name="botonReanudar" type="TextureButton" parent="Fondo"]
+offset_left = -90.0
+offset_top = -55.0
+offset_right = 90.0
+offset_bottom = -16.0
+focus_neighbor_bottom = NodePath("../botonOpciones")
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 2 )
+
+[node name="reanudar" type="Label" parent="Fondo/botonReanudar"]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 180.0
+offset_bottom = 34.0
+text = "REANUDAR"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="botonOpciones" type="TextureButton" parent="Fondo"]
+offset_left = -90.0
+offset_top = -4.375
+offset_right = 90.0
+offset_bottom = 34.625
+focus_neighbor_top = NodePath("../botonReanudar")
+focus_neighbor_bottom = NodePath("../botonSalir")
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Fondo/botonOpciones"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 178.0
+offset_bottom = 34.0
+text = "OPCIONES"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="botonSalir" type="TextureButton" parent="Fondo"]
+offset_left = -89.375
+offset_top = 46.25
+offset_right = 90.625
+offset_bottom = 85.25
+focus_neighbor_top = NodePath("../botonOpciones")
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Fondo/botonSalir"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 175.0
+offset_bottom = 33.0
+text = "MENU"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Pausa" type="TextureButton" parent="."]
+offset_left = 215.0
+offset_top = -112.5
+offset_right = 255.0
+offset_bottom = -72.5
+scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 4 )
+texture_focused = ExtResource( 5 )
+
+[node name="LogoPausa" type="Sprite2D" parent="Pausa"]
+position = Vector2( 18.125, 16.875 )
+scale = Vector2( 0.025, 0.025 )
+texture = ExtResource( 6 )
+
+[connection signal="focus_entered" from="Fondo/botonReanudar" to="." method="_on_botonReanudar_focus_entered"]
+[connection signal="mouse_entered" from="Fondo/botonReanudar" to="." method="_on_botonReanudar_mouse_entered"]
+[connection signal="pressed" from="Fondo/botonReanudar" to="." method="_on_botonReanudar_pressed"]
+[connection signal="focus_entered" from="Fondo/botonOpciones" to="." method="_on_botonOpciones_focus_entered"]
+[connection signal="mouse_entered" from="Fondo/botonOpciones" to="." method="_on_botonOpciones_mouse_entered"]
+[connection signal="pressed" from="Fondo/botonOpciones" to="." method="_on_botonOpciones_pressed"]
+[connection signal="focus_entered" from="Fondo/botonSalir" to="." method="_on_botonSalir_focus_entered"]
+[connection signal="mouse_entered" from="Fondo/botonSalir" to="." method="_on_botonSalir_mouse_entered"]
+[connection signal="pressed" from="Fondo/botonSalir" to="." method="_on_botonSalir_pressed"]
+[connection signal="mouse_entered" from="Pausa" to="." method="_on_Pausa_mouse_entered"]

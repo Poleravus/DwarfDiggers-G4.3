@@ -1,0 +1,53 @@
+{
+  "0": {
+    "mejora_name": "Botas",
+    "mejora_desc": ["+5 de Velocidad","+5 de Velocidad","+10 de Velocidad","+10 de Velocidad","+20 de Velocidad","+20 de Velocidad"],
+    "mejora_sprite": "res://Sprites/Mejoras/ironpaws.png"
+  },
+  "1": {
+    "mejora_name": "Pico",
+    "mejora_desc": ["Obtienes el Pico","+2 de daño","0.2x menos de cooldown", "+3 de daño","0.45x menos de cooldown","+40 unidades de rango"],
+    "mejora_sprite": "res://Sprites/Armas/Pico/picoprueba.png"
+  },
+  "2": {
+    "mejora_name": "Rango XP",
+    "mejora_desc": ["1.2x rango","1.2x rango", "1.2x rango","1.4x rango","1.4x rango","1.4x rango"],
+    "mejora_sprite": "res://Sprites/Objetos/Experiencia.png"
+  },
+  "3": {
+    "mejora_name": "Daño",
+    "mejora_desc": ["+0.1 de daño"],
+    "mejora_sprite": "res://Sprites/Mejoras/Daño.png"
+  },
+  "4": {
+    "mejora_name": "Dinero",
+    "mejora_desc": ["200 Dabloons"],
+    "mejora_sprite": "res://Sprites/Mejoras/4dabloons.png"
+  },
+  "5": {
+    "mejora_name": "Bendición",
+    "mejora_desc": ["Te curas 10 de vida"],
+    "mejora_sprite": "res://Sprites/Mejoras/L4d_medkit.png"
+  },
+  "6": {
+    "mejora_name": "Ametralladora",
+    "mejora_desc": ["Obtienes la ametralladora","+5 de daño", "0.3x menos de cooldown","+5 de daño","0.4x menos de cooldown y mas municion","+25 de rango y ya no necesitas recargar"],
+    "mejora_sprite": "res://Sprites/Armas/Ametralladora/Ametralladora.png"
+  },
+  "7":{
+    "mejora_name": "Bobina Tesla",
+    "mejora_desc": ["Obtienes una bobina tesla","+1 de daño","+15 de rango","+2 de daño","+15 de rango","+2 de daño y +30 de rango"],
+    "mejora_sprite": "res://Sprites/Armas/BobinaTesla/Bobina.png"
+  },
+  "8":{
+    "mejora_name": "Sniper",
+    "mejora_desc": ["Obtienes Sniper","+1 de daño","+1 rebote de bala","+3 de daño","+4 de daño","+5 de daño y +1 rebote de bala"],
+    "mejora_sprite": "res://Sprites/Armas/Sniper/Sniper.png"
+  },
+  "9":{
+    "mejora_name": "Lanzallamas",
+    "mejora_desc": ["Obtienes Lanzallamas","+2 de daño","+2 de daño","+2 de daño","+2 de daño","No necesitas recargar"],
+    "mejora_sprite": "res://Sprites/Armas/LanzaLlamas/LanzallamasPNG.png"
+  }
+
+}

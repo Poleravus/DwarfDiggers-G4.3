@@ -1,0 +1,221 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sprites/Assets/black background.jpeg" type="Texture2D" id=1]
+[ext_resource path="res://Sprites/Menus/1-3.png" type="Texture2D" id=2]
+[ext_resource path="res://Fonts/new_dynamicfont.tres" type="FontFile" id=3]
+[ext_resource path="res://Sprites/Menus/new_theme.tres" type="Theme" id=4]
+[ext_resource path="res://Sprites/Menus/7-3.png" type="Texture2D" id=5]
+[ext_resource path="res://Sprites/Menus/7-2.png" type="Texture2D" id=6]
+[ext_resource path="res://Sprites/Menus/7-1.png" type="Texture2D" id=7]
+[ext_resource path="res://Scripts/GUIopciones.gd" type="Script" id=8]
+[ext_resource path="res://Sprites/Menus/cave.jpg" type="Texture2D" id=9]
+
+[node name="GUIOpciones" type="Control"]
+process_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 8 )
+
+[node name="Cave" type="Sprite2D" parent="."]
+position = Vector2( 95, 59 )
+texture = ExtResource( 9 )
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color( 0.2, 0.227451, 0.309804, 0.486275 )
+position = Vector2( -0.323321, -1.50001 )
+scale = Vector2( 3.2651, 2.24444 )
+texture = ExtResource( 1 )
+
+[node name="Fondo" type="Sprite2D" parent="."]
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+
+[node name="Opciones" type="Label" parent="Fondo"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -487.5
+offset_top = -223.75
+offset_right = -107.5
+offset_bottom = -195.75
+scale = Vector2( 1.25, 1.25 )
+theme_override_fonts/font = ExtResource( 3 )
+text = "OPCIONES"
+align = 1
+
+[node name="Video" type="Label" parent="Fondo"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -487.5
+offset_top = -178.75
+offset_right = -107.5
+offset_bottom = -150.75
+scale = Vector2( 1.25, 1.25 )
+theme_override_fonts/font = ExtResource( 3 )
+text = "-Video-"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="FullScreen" type="Label" parent="Fondo/Video"]
+offset_left = 57.0
+offset_top = 24.0
+offset_right = 189.0
+offset_bottom = 50.0
+text = "FullScreen:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="FCheckBox" type="CheckBox" parent="Fondo/Video/FullScreen"]
+offset_left = 192.0
+offset_top = -5.0
+offset_right = 216.0
+offset_bottom = 29.0
+scale = Vector2( 1.2, 1.2 )
+focus_neighbor_bottom = NodePath("../../Borderless/BCheckBox")
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Borderless" type="Label" parent="Fondo/Video"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = 48.0
+offset_right = -191.0
+offset_bottom = 46.0
+pivot_offset = Vector2( 55, 17 )
+text = "Borderless:"
+align = 2
+
+[node name="BCheckBox" type="CheckBox" parent="Fondo/Video/Borderless"]
+offset_left = 192.0
+offset_top = -5.0
+offset_right = 216.0
+offset_bottom = 29.0
+scale = Vector2( 1.2, 1.2 )
+focus_neighbor_top = NodePath("../../FullScreen/FCheckBox")
+
+[node name="Vsync" type="Label" parent="Fondo/Video"]
+offset_left = 58.0
+offset_top = 99.0
+offset_right = 130.0
+offset_bottom = 125.0
+text = "Vsync:"
+align = 2
+
+[node name="VCheckBox" type="CheckBox" parent="Fondo/Video/Vsync"]
+offset_left = 191.0
+offset_top = -3.0
+offset_right = 215.0
+offset_bottom = 31.0
+scale = Vector2( 1.2, 1.2 )
+focus_neighbor_bottom = NodePath("../../../Audio/Master/MaVHSlider")
+icon_alignment = 1
+
+[node name="Audio" type="Label" parent="Fondo"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -487.5
+offset_top = -12.5
+offset_right = -107.5
+offset_bottom = 15.5
+scale = Vector2( 1.25, 1.25 )
+theme_override_fonts/font = ExtResource( 3 )
+text = "-Audio-"
+align = 1
+
+[node name="Master" type="Label" parent="Fondo/Audio"]
+offset_left = 58.0
+offset_top = 30.0
+offset_right = 154.0
+offset_bottom = 56.0
+text = "Master:"
+
+[node name="MaVHSlider" type="HSlider" parent="Fondo/Audio/Master"]
+offset_left = 142.0
+offset_top = 8.0
+offset_right = 252.0
+offset_bottom = 24.0
+min_value = -30.0
+max_value = 10.0
+tick_count = 1
+
+[node name="Musica" type="Label" parent="Fondo/Audio"]
+offset_left = 58.0
+offset_top = 60.0
+offset_right = 154.0
+offset_bottom = 86.0
+text = "Musica:"
+
+[node name="MuVHSlider" type="HSlider" parent="Fondo/Audio/Musica"]
+offset_left = 142.0
+offset_top = 8.0
+offset_right = 252.0
+offset_bottom = 24.0
+min_value = -30.0
+max_value = 10.0
+tick_count = 1
+
+[node name="FX" type="Label" parent="Fondo/Audio"]
+offset_left = 58.0
+offset_top = 90.0
+offset_right = 154.0
+offset_bottom = 116.0
+text = "FX:"
+
+[node name="FxVHSlider" type="HSlider" parent="Fondo/Audio/FX"]
+offset_left = 142.0
+offset_top = 8.0
+offset_right = 252.0
+offset_bottom = 24.0
+min_value = -30.0
+max_value = 10.0
+tick_count = 1
+
+[node name="RegresarBTN" type="TextureButton" parent="Fondo"]
+offset_left = -110.0
+offset_top = 178.75
+offset_right = 70.0
+offset_bottom = 218.75
+scale = Vector2( 1.25, 1.25 )
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 5 )
+texture_focused = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Fondo/RegresarBTN"]
+offset_right = 178.0
+offset_bottom = 33.0
+text = "REGRESAR"
+align = 1
+valign = 1
+
+[node name="CameraOpciones" type="Camera2D" parent="."]
+zoom = Vector2( 0.7, 0.8 )
+
+[connection signal="focus_entered" from="Fondo/Video/FullScreen/FCheckBox" to="." method="_on_FCheckBox_focus_entered"]
+[connection signal="mouse_entered" from="Fondo/Video/FullScreen/FCheckBox" to="." method="_on_FCheckBox_mouse_entered"]
+[connection signal="toggled" from="Fondo/Video/FullScreen/FCheckBox" to="." method="_on_FCheckBox_toggled"]
+[connection signal="focus_entered" from="Fondo/Video/Borderless/BCheckBox" to="." method="_on_BCheckBox_focus_entered"]
+[connection signal="mouse_entered" from="Fondo/Video/Borderless/BCheckBox" to="." method="_on_BCheckBox_mouse_entered"]
+[connection signal="toggled" from="Fondo/Video/Borderless/BCheckBox" to="." method="_on_BCheckBox_toggled"]
+[connection signal="focus_entered" from="Fondo/Video/Vsync/VCheckBox" to="." method="_on_VCheckBox_focus_entered"]
+[connection signal="mouse_entered" from="Fondo/Video/Vsync/VCheckBox" to="." method="_on_VCheckBox_mouse_entered"]
+[connection signal="toggled" from="Fondo/Video/Vsync/VCheckBox" to="." method="_on_VCheckBox_toggled"]
+[connection signal="focus_entered" from="Fondo/Audio/Master/MaVHSlider" to="." method="_on_MaVHSlider_focus_entered"]
+[connection signal="mouse_entered" from="Fondo/Audio/Master/MaVHSlider" to="." method="_on_MaVHSlider_mouse_entered"]
+[connection signal="value_changed" from="Fondo/Audio/Master/MaVHSlider" to="." method="_on_MaVHSlider_value_changed"]
+[connection signal="focus_entered" from="Fondo/Audio/Musica" to="." method="_on_Musica_focus_entered"]
+[connection signal="focus_entered" from="Fondo/Audio/Musica/MuVHSlider" to="." method="_on_MuVHSlider_focus_entered"]
+[connection signal="mouse_entered" from="Fondo/Audio/Musica/MuVHSlider" to="." method="_on_MuVHSlider_mouse_entered"]
+[connection signal="value_changed" from="Fondo/Audio/Musica/MuVHSlider" to="." method="_on_MuVHSlider_value_changed"]
+[connection signal="focus_entered" from="Fondo/Audio/FX" to="." method="_on_FX_focus_entered"]
+[connection signal="focus_entered" from="Fondo/Audio/FX/FxVHSlider" to="." method="_on_FxVHSlider_focus_entered"]
+[connection signal="mouse_entered" from="Fondo/Audio/FX/FxVHSlider" to="." method="_on_FxVHSlider_mouse_entered"]
+[connection signal="value_changed" from="Fondo/Audio/FX/FxVHSlider" to="." method="_on_FxVHSlider_value_changed"]
+[connection signal="focus_entered" from="Fondo/RegresarBTN" to="." method="_on_RegresarBTN_focus_entered"]
+[connection signal="mouse_entered" from="Fondo/RegresarBTN" to="." method="_on_RegresarBTN_mouse_entered"]
+[connection signal="pressed" from="Fondo/RegresarBTN" to="." method="_on_RegresarBTN_pressed"]

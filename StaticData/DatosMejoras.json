@@ -1,0 +1,37 @@
+{
+  "0": {
+    "mejora_name": "Botas",
+    "mejora_desc": ["Vas mas rapido","vas aun mas rapido", "mas rapido","mas rapido","aun mas","mucho mas"],
+    "mejora_sprite": "res://Sprites/unpopular-opinion-swiftness-boots-are-better-than-mobility-v0-mt8ejr0txxm91.webp"
+  },
+  "1": {
+    "mejora_name": "Pico",
+    "mejora_desc": ["Obtienes el Pico","+2 de daño","-20% de cooldown", "+3 de daño","-45% de cooldown","+40 unidades de rango"],
+    "mejora_sprite": "res://Sprites/picoprueba.png"
+  },
+  "2": {
+    "mejora_name": "Rango XP",
+    "mejora_desc": ["x1.2 rango","x1.2 rango", "x1.2 rango","x1.4 rango","x1.4 rango","x1.4 rango"],
+    "mejora_sprite": "res://Sprites/Experiencia.png"
+  },
+  "3": {
+    "mejora_name": "Daño",
+    "mejora_desc": ["Aumenta tu daño un 10%"],
+    "mejora_sprite": "res://Sprites/Daño.png"
+  },
+  "4": {
+    "mejora_name": "Dinero",
+    "mejora_desc": ["200 Dabloons"],
+    "mejora_sprite": "res://Sprites/4dabloons.png"
+  },
+  "5": {
+    "mejora_name": "Bendición",
+    "mejora_desc": ["Te curas una pequeña cantidad"],
+    "mejora_sprite": "res://Sprites/L4d_medkit.png"
+  },
+  "6": {
+    "mejora_name": "Ametralladora",
+    "mejora_desc": ["Obtienes la ametralladora","+2 de daño", "-40% de cooldown","+3 de daño","-20% de cooldown","Extension de cargador 45 balas"],
+    "mejora_sprite": "res://Sprites/Ametralladora.png"
+  }
+}

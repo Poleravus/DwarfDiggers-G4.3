@@ -1,0 +1,320 @@
+[gd_scene load_steps=53 format=2]
+
+[ext_resource path="res://Sprites/Enemigos/StoneGolem/Old_Guardian_idle.png" type="Texture2D" id=1]
+[ext_resource path="res://Sprites/Enemigos/StoneGolem/Old_Guardian_death.png" type="Texture2D" id=2]
+[ext_resource path="res://Sprites/Enemigos/StoneGolem/Old_Guardian_walk.png" type="Texture2D" id=3]
+[ext_resource path="res://Sprites/Enemigos/StoneGolem/Old_Guardian_attack_1.png" type="Texture2D" id=4]
+[ext_resource path="res://Sprites/Assets/light.png" type="Texture2D" id=123]
+[ext_resource path="res://Sprites/Menus/5-2.png" type="Texture2D" id=152]
+[ext_resource path="res://Sprites/Armas/LanzaLlamas/efecto_fuego.png" type="Texture2D" id=153]
+[ext_resource path="res://Scripts/StoneGolem.gd" type="Script" id=154]
+[ext_resource path="res://Sprites/Enemigos/StoneGolem/CirculoPng.png" type="Texture2D" id=155]
+[ext_resource path="res://Sprites/Armas/BobinaTesla/circunferencia.png" type="Texture2D" id=156]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 120, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 240, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 360, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 480, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 600, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 720, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 840, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 960, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1080, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 120, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 240, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 360, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 480, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 600, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 720, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 840, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 960, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 1080, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 120, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 240, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 360, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 480, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 600, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 120, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 240, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 360, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 480, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 600, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 720, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 840, 120, 120 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "Death",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 6.0
+}, {
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 229.055
+
+[sub_resource type="CircleShape2D" id=44]
+radius = 54.037
+
+[sub_resource type="Theme" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 170.0
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 9.92
+
+[node name="StoneGolem" type="CharacterBody2D" groups=["Enemy", "EnemyNoAnim"]]
+light_mask = 2
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 154 )
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2( 1.8, 1.8 )
+frames = SubResource( 43 )
+animation = "Walk"
+frame = 2
+
+[node name="SpriteTimer" type="Timer" parent="Sprite2D"]
+wait_time = 0.3
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+visible = false
+shape = SubResource( 7 )
+
+[node name="ProgressCircle" type="Sprite2D" parent="DamageArea"]
+modulate = Color( 0.984314, 0, 0, 0.137255 )
+light_mask = 2
+position = Vector2( 0, -4.76837e-07 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 155 )
+
+[node name="Tween" type="Tween" parent="DamageArea/ProgressCircle"]
+
+[node name="CircleEdge" type="Sprite2D" parent="DamageArea"]
+modulate = Color( 0.964706, 0, 0, 0.329412 )
+light_mask = 2
+position = Vector2( -0.999987, 4.00001 )
+scale = Vector2( 0.77551, 0.848896 )
+texture = ExtResource( 156 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4, 8 )
+rotation = -0.0189847
+shape = SubResource( 44 )
+
+[node name="SpriteEfecto" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2( 1.13687e-13, -77 )
+scale = Vector2( 0.396226, 0.294872 )
+texture = ExtResource( 153 )
+
+[node name="Barra_vida" type="Control" parent="."]
+offset_left = -5.0
+offset_top = -128.0
+offset_right = 35.0
+offset_bottom = -88.0
+
+[node name="BarraVida" type="Sprite2D" parent="Barra_vida"]
+light_mask = 2
+position = Vector2( 5, 67 )
+scale = Vector2( 0.455782, 0.366667 )
+texture = ExtResource( 152 )
+
+[node name="ProgressBar" type="ProgressBar" parent="Barra_vida/BarraVida"]
+light_mask = 2
+anchor_right = 0.407
+anchor_bottom = 0.755
+offset_left = -70.0
+offset_top = -3.0
+offset_right = 10.171
+offset_bottom = -6.06
+theme = SubResource( 3 )
+theme_override_styles/fg = SubResource( 4 )
+theme_override_styles/bg = SubResource( 5 )
+max_value = 10.0
+step = 1.0
+value = 10.0
+percent_visible = false
+
+[node name="Barra_vida_timer" type="Timer" parent="Barra_vida"]
+
+[node name="Hit_timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="FireTick" type="Timer" parent="."]
+
+[node name="Cooldown" type="Timer" parent="."]
+
+[node name="AttackRange" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+position = Vector2( 0, 2 )
+shape = SubResource( 6 )
+
+[node name="ChargeAttackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+visible = false
+position = Vector2( 1, -42 )
+scale = Vector2( 9.48943, 10.8968 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1.13687e-13, 3 )
+scale = Vector2( 0.877177, 0.933302 )
+shape = SubResource( 8 )
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+texture = ExtResource( 123 )
+texture_scale = 0.9
+color = Color( 0.501961, 0.921569, 0.803922, 1 )
+range_item_cull_mask = 2
+shadow_gradient_length = 3.0
+shadow_filter = 2
+shadow_filter_smooth = 50.0
+shadow_item_cull_mask = 2
+
+[connection signal="timeout" from="Sprite2D/SpriteTimer" to="." method="_on_SpriteTimer_timeout"]
+[connection signal="tween_completed" from="DamageArea/ProgressCircle/Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="timeout" from="Barra_vida/Barra_vida_timer" to="." method="_on_Barra_vida_timer_timeout"]
+[connection signal="timeout" from="Hit_timer" to="." method="_on_Hit_timer_timeout"]
+[connection signal="timeout" from="FireTick" to="." method="_on_FireTick_timeout"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]
+[connection signal="timeout" from="ChargeAttackTimer" to="." method="_on_ChargeAttackTimer_timeout"]

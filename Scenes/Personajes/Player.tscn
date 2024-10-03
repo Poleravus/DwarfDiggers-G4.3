@@ -1,0 +1,263 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Sprites/Assets/crystal_mauler_free_288x128_SpriteSheet.png" type="Texture2D" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Menus/EstadisticasPersonaje.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Armas/Pico.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Menus/GUIlvlup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Menus/GUIPausa.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Menus/GUIopcionesingame.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Menus/YOUDIED!.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/HUD/EstadisticasView.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/conectorSeñales.gd" type="Script" id=11]
+[ext_resource path="res://Sprites/Assets/light.png" type="Texture2D" id=12]
+[ext_resource path="res://Sounds/deathfx.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Scenes/Menus/Instrucciones.tscn" type="PackedScene" id=14]
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 2, 0 ), Vector2( 3, 0 ), Vector2( 4, 0 ), Vector2( 5, 0 ), Vector2( 6, 0 ), Vector2( 7, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Move"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.5, 1, 1.5, 2, 2.4, 3, 3.5 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ), Vector2( 1, 1 ), Vector2( 2, 1 ), Vector2( 3, 1 ), Vector2( 4, 1 ), Vector2( 5, 1 ), Vector2( 6, 1 ), Vector2( 7, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Muerte"
+length = 4.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3, 3.3, 3.6, 3.9 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 13 ), Vector2( 1, 13 ), Vector2( 3, 13 ), Vector2( 4, 13 ), Vector2( 5, 13 ), Vector2( 6, 13 ), Vector2( 7, 13 ), Vector2( 8, 13 ), Vector2( 9, 13 ), Vector2( 10, 13 ), Vector2( 11, 13 ), Vector2( 12, 13 ), Vector2( 13, 13 ), Vector2( 14, 13 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 28.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+position = Vector2( 383, 224 )
+collision_layer = 33
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+process_mode = 1
+position = Vector2( 1, -1 )
+texture = ExtResource( 12 )
+texture_scale = 4.2
+color = Color( 0.952941, 0.909804, 0.666667, 1 )
+energy = 0.9
+shadow_gradient_length = 3.0
+shadow_filter = 2
+shadow_filter_smooth = 50.0
+
+[node name="PasiveRegenTimer" type="Timer" parent="."]
+
+[node name="DeathFX" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2( 3.31261, 3.2864 )
+stream = ExtResource( 13 )
+bus = "FX"
+
+[node name="EstadisticasPersonaje" parent="." instance=ExtResource( 3 )]
+process_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2( 0, -31 )
+scale = Vector2( 1.1, 0.6 )
+texture = ExtResource( 1 )
+hframes = 21
+vframes = 14
+
+[node name="TimerSprite" type="Timer" parent="Sprite2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 4.0
+anims/Idle = SubResource( 4 )
+anims/Move = SubResource( 6 )
+anims/Muerte = SubResource( 7 )
+anims/RESET = SubResource( 5 )
+
+[node name="HitboxNormal" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -3 )
+shape = SubResource( 1 )
+
+[node name="HitboxArea" type="Area2D" parent="." groups=["Player"]]
+visible = false
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
+position = Vector2( 0, -4 )
+shape = SubResource( 2 )
+
+[node name="Rango_recogida" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rango_recogida"]
+visible = false
+position = Vector2( 1, 3 )
+shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+light_mask = 2
+position = Vector2( -1, -4 )
+zoom = Vector2( 0.75, 0.75 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+scale = Vector2( 1.33, 1.33 )
+transform = Transform2D( 1.33, 0, 0, 1.33, 0, 0 )
+
+[node name="EstadisticasView" parent="Camera2D/CanvasLayer" instance=ExtResource( 10 )]
+light_mask = 16
+offset_left = 10.5263
+offset_top = 36.8421
+offset_right = 10.5264
+offset_bottom = 36.8421
+scale = Vector2( 0.8, 0.8 )
+
+[node name="HUD" parent="Camera2D/CanvasLayer" instance=ExtResource( 4 )]
+light_mask = 16
+offset_left = 843.704
+offset_top = 398.0
+offset_right = 843.704
+offset_bottom = 398.0
+
+[node name="GUIlvlup" parent="Camera2D/CanvasLayer" instance=ExtResource( 6 )]
+light_mask = 16
+offset_left = -124.812
+offset_top = -81.9549
+offset_right = -124.812
+offset_bottom = -81.9549
+
+[node name="GUIpausa" parent="Camera2D/CanvasLayer" instance=ExtResource( 7 )]
+light_mask = 16
+offset_left = 379.699
+offset_top = 221.053
+offset_right = 379.699
+offset_bottom = 221.053
+
+[node name="Instrucciones" parent="Camera2D/CanvasLayer" instance=ExtResource( 14 )]
+offset_left = 0.75188
+offset_top = -1.50376
+offset_right = 0.751831
+offset_bottom = -1.50378
+scale = Vector2( 0.75, 0.75 )
+
+[node name="GUIopcionesingame" parent="Camera2D/CanvasLayer" instance=ExtResource( 8 )]
+light_mask = 16
+offset_left = 378.195
+offset_top = 210.526
+offset_right = -252.804
+offset_bottom = -162.474
+pivot_offset = Vector2( -9.02252, -17.2932 )
+
+[node name="YOUDIED!" parent="Camera2D/CanvasLayer" instance=ExtResource( 9 )]
+light_mask = 16
+offset_left = 29.567
+offset_top = -3.51579
+offset_right = 29.567
+offset_bottom = -3.51581
+
+[node name="Armas" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="Pico" parent="Armas" instance=ExtResource( 5 )]
+
+[connection signal="set_mejora_ametra" from="." to="Armas" method="_on_Player_set_mejora_ametra"]
+[connection signal="set_mejora_bobina" from="." to="Armas" method="_on_Player_set_mejora_bobina"]
+[connection signal="set_mejora_botas" from="." to="EstadisticasPersonaje" method="_on_Player_set_mejora_botas"]
+[connection signal="set_mejora_damage" from="." to="EstadisticasPersonaje" method="_on_Player_set_mejora_damage"]
+[connection signal="set_mejora_dinero" from="." to="EstadisticasPersonaje" method="_on_Player_set_mejora_dinero"]
+[connection signal="set_mejora_lanzallamas" from="." to="Armas" method="_on_Player_set_mejora_lanzallamas"]
+[connection signal="set_mejora_pico" from="." to="Armas" method="_on_Player_set_mejora_pico"]
+[connection signal="set_mejora_rango" from="." to="EstadisticasPersonaje" method="_on_Player_set_mejora_rango"]
+[connection signal="set_mejora_sniper" from="." to="Armas" method="_on_Player_set_mejora_sniper"]
+[connection signal="set_mejora_vida" from="." to="EstadisticasPersonaje" method="_on_Player_set_mejora_vida"]
+[connection signal="timeout" from="PasiveRegenTimer" to="." method="_on_PasiveRegenTimer_timeout"]
+[connection signal="actualizarDamageArma" from="EstadisticasPersonaje" to="Armas" method="_on_EstadisticasPersonaje_actualizarDamageArma"]
+[connection signal="damage_actualizado" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_EstadisticasPersonaje_damage_actualizado"]
+[connection signal="exp_actualizada" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/HUD" method="_on_EstadisticasPersonaje_exp_actualizada"]
+[connection signal="experiencia_maxima_actualizada" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/HUD" method="_on_EstadisticasPersonaje_experiencia_maxima_actualizada"]
+[connection signal="lvl_actualizado" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/HUD" method="_on_EstadisticasPersonaje_lvl_actualizado"]
+[connection signal="lvl_up" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/GUIlvlup" method="_on_EstadisticasPersonaje_lvl_up"]
+[connection signal="monedas_actualizadas" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_EstadisticasPersonaje_monedas_actualizadas"]
+[connection signal="muelto" from="EstadisticasPersonaje" to="." method="_on_EstadisticasPersonaje_muelto"]
+[connection signal="rango_recogida_actualizado" from="EstadisticasPersonaje" to="." method="_on_EstadisticasPersonaje_rango_recogida_actualizado"]
+[connection signal="rango_recogida_actualizado" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_EstadisticasPersonaje_rango_recogida_actualizado"]
+[connection signal="regeneracion_actualizada" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_EstadisticasPersonaje_regeneracion_actualizada"]
+[connection signal="suerte_actualizada" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_EstadisticasPersonaje_suerte_actualizada"]
+[connection signal="velocidad_mov_actualizada" from="EstadisticasPersonaje" to="." method="_on_EstadisticasPersonaje_velocidad_mov_actualizada"]
+[connection signal="velocidad_mov_actualizada" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_EstadisticasPersonaje_velocidad_mov_actualizada"]
+[connection signal="vida_actualizada" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_EstadisticasPersonaje_vida_actualizada"]
+[connection signal="vida_actualizada" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/HUD" method="_on_EstadisticasPersonaje_vida_actualizada"]
+[connection signal="vidamax_actualizada" from="EstadisticasPersonaje" to="Camera2D/CanvasLayer/HUD" method="_on_EstadisticasPersonaje_vidamax_actualizada"]
+[connection signal="timeout" from="Sprite2D/TimerSprite" to="." method="_on_TimerSprite_timeout"]
+[connection signal="area_entered" from="HitboxArea" to="." method="_on_HitboxArea_area_entered"]
+[connection signal="area_entered" from="Rango_recogida" to="." method="_on_Rango_recogida_area_entered"]
+[connection signal="mejora_elegida" from="Camera2D/CanvasLayer/GUIlvlup" to="." method="_on_GUIlvlup_mejora_elegida"]
+[connection signal="inventarioAmetralladora" from="Armas" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_Armas_inventarioAmetralladora"]
+[connection signal="inventarioBobina" from="Armas" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_Armas_inventarioBobina"]
+[connection signal="inventarioLanzallamas" from="Armas" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_Armas_inventarioLanzallamas"]
+[connection signal="inventarioPico" from="Armas" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_Armas_inventarioPico"]
+[connection signal="inventarioSniper" from="Armas" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_Armas_inventarioSniper"]
+[connection signal="mejorarAmetralladora" from="Armas" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_Armas_mejorarAmetralladora"]
+[connection signal="mejorarBobina" from="Armas" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_Armas_mejorarBobina"]
+[connection signal="mejorarLanzallamas" from="Armas" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_Armas_mejorarLanzallamas"]
+[connection signal="mejorarPico" from="Armas" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_Armas_mejorarPico"]
+[connection signal="mejorarSniper" from="Armas" to="Camera2D/CanvasLayer/EstadisticasView" method="_on_Armas_mejorarSniper"]
